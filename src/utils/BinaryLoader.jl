@@ -22,22 +22,22 @@ function load_binary_from_file_path(file_path :: String)
     @info file_path
     io = open_binary(file_path)
     @info unpack(io)
-    result = JSON3.read(io)
-    @info JSON3.prettY(result)
-    return result
-#    n = read(io, Int64)
-#    nt = read(io, Int64)
-#    @info "set Array to dim of nt"
-#    @info nt
-#
-#    type_name = Array{Char}(undef, nt)
-#
-#    for i in eachindex(type_name)
-#        type_name[i] = read(io, Char)
-#    end
-#
-#    # Type
-#    T = eval(Symbol(String(type_name)))
-#    return unpack_stream_with_type_and_number_of_elements(io, T, n)
+    n = unpack(io, Int64)
+    nt = unpack(io, Int64)
+    @info "set Array to dim of nt"
+    @info "n:"
+    @info n
+    @info "nt:"
+    @info nt
+
+    type_name = Array{Char}(undef, nt)
+
+    for i in eachindex(type_name)
+        type_name[i] = read(io, Char)
+    end
+
+    # Type
+    T = eval(Symbol(String(type_name)))
+    return unpack_stream_with_type_and_number_of_elements(io, T, n)
 end
 
