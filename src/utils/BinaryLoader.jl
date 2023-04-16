@@ -18,6 +18,8 @@ function load_binary_from_file_path(file_path :: String)
     io = open_binary(file_path)
     n = read(io, Int64)
     nt = read(io, Int64)
+    @info "set Array to dim of nt"
+    @info nt
 
     type_name = Array{Char}(undef, nt)
 
