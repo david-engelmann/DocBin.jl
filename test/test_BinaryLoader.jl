@@ -6,5 +6,7 @@ using Test
     test_path = "test/assets/test_doc_bin.spacy"
     @test isa(test_path, String)
     result = load_binary_from_file(test_path)
-    @test test_path == result
+    @info "post load_binary_from_file"
+    @info result
+    @test isa(result, Array)
 end
