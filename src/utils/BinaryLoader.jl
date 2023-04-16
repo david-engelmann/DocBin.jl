@@ -1,6 +1,7 @@
 include("../models/DocBin.jl")
 using JSON3
 using MsgPack
+using GZip
 
 function open_binary(file_path :: String)
     return open(file_path, "r")
