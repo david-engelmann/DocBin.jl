@@ -10,5 +10,5 @@ doc_bin.add(doc=doc)
 
 nlp.to_disk("test/assets/test_nlp")
 doc_bin.to_disk("test/assets/test_doc_bin.spacy")
-test_path = os.getcwd() + "/test"
+test_path = os.getcwd() + "/test/assets"
 print(f"after saving spacy model and doc_bin:\n{os.listdir(test_path)}")
