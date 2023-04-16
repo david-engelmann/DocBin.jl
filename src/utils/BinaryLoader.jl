@@ -19,7 +19,8 @@ function load_binary_from_file_path(file_path :: String)
     @info "location of the binary file:"
     @info file_path
     io = open_binary(file_path)
-    result = unpack(io, DocBin)
+    result = JSON3.read(io)
+    @info JSON3.prettY(result)
     return result
 #    n = read(io, Int64)
 #    nt = read(io, Int64)
