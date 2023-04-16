@@ -5,7 +5,7 @@ using Test
     @info "Test loading from a binary file"
     test_path = "test/assets/test_doc_bin.spacy"
     @test isa(test_path, String)
-    n, nt = load_binary_from_file(test_path)
+    n, nt = load_binary_from_file_path(test_path)
     @info "post load_binary_from_file"
     @info n
     @info nt
