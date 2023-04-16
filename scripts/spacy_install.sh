@@ -1,3 +1,5 @@
 #!/bin/bash
-python3 spacy_model_and_doc_bin_creation.py
+pip install -U pip setuptools wheel
+pip install -U spacy
+python -m spacy download en_core_web_sb
 exec "$@"
