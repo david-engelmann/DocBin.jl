@@ -8,8 +8,7 @@ nlp = spacy.load("en_core_web_sm")
 doc = nlp("Man, deviated leather in this 911\nBend a corner, I'm on Hayes Street copping a windbreaker")
 doc_bin.add(doc=doc)
 
-print(os.getcwd())
-print(os.listdir(os.getcwd()))
-print(os.listdir(f"{os.getcwd()}/test"))
 nlp.to_disk("test/assets/test_nlp")
 doc_bin.to_disk("test/assets/test_doc_bin.spacy")
+test_path = os.getcwd() + "/test"
+print(f"after saving spacy model and doc_bin:\n{os.listdir(test_path)}")
