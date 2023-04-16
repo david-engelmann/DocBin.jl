@@ -10,5 +10,6 @@ doc_bin.add(doc=doc)
 
 print(os.getcwd())
 print(os.listdir(os.getcwd()))
+print(os.listdir(f"{os.getcwd()}/test"))
 nlp.to_disk("test/assets/test_nlp")
 doc_bin.to_disk("test/assets/test_doc_bin.spacy")
