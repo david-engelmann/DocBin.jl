@@ -9,6 +9,6 @@ doc = nlp("Man, deviated leather in this 911\nBend a corner, I'm on Hayes Street
 doc_bin.add(doc=doc)
 
 print(os.getcwd())
-
+print(os.listdir(os.getcwd()))
 nlp.to_disk("test/assets/test_nlp")
 doc_bin.to_disk("test/assets/test_doc_bin.spacy")
