@@ -5,8 +5,10 @@ using Test
     @info "Test loading from a binary file"
     test_path = "test/assets/test_doc_bin.spacy"
     @test isa(test_path, String)
-    result = load_binary_from_file(test_path)
+    n, nt = load_binary_from_file(test_path)
     @info "post load_binary_from_file"
-    @info result
-    @test isa(result, Array)
+    @info n
+    @info nt
+    @test isa(n, Float64)
+    @test isa(nt, Float64)
 end
