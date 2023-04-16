@@ -1,5 +1,5 @@
 include("../models/DocBin.jl")
-using MsgPack
+using JSON3
 
 function open_binary(file_path :: String)
     return open(file_path, "r")
