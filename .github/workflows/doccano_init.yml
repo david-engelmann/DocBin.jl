@@ -32,6 +32,8 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
+      - name: Install spacy
+        run: sh ./scripts/spacy_install.sh
       - name: Install julia
         run: sh ./scripts/julia_install.sh
       - name: Run Full Test Suite
