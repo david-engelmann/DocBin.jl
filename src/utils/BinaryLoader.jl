@@ -21,9 +21,9 @@ function load_binary_from_file_path(file_path :: String)
     @info "location of the binary file:"
     @info file_path
     io = open_binary(file_path)
-    @info MsgPack.unpack(io)
-    n = MsgPack.unpack(io)
-    nt = MsgPack.unpack(io)
+    @info MsgPack.unpack(seekstart(io))
+    n = MsgPack.unpack(seekstart(io))
+    nt = MsgPack.unpack(seekstart(io))
     @info "set Array to dim of nt"
     @info "n:"
     @info n
