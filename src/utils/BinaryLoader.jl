@@ -22,8 +22,8 @@ function load_binary_from_file_path(file_path :: String)
     @info file_path
     io = open_binary(file_path)
     @info unpack(io)
-    n = unpack(io, Int64)
-    nt = unpack(io, Int64)
+    n = unpack(io)
+    nt = unpack(io)
     @info "set Array to dim of nt"
     @info "n:"
     @info n
