@@ -1,3 +1,6 @@
+include("../models/DocBin.jl")
+using MsgPack
+
 function open_binary(file_path :: String)
     return open(file_path, "r")
 end
@@ -16,19 +19,21 @@ function load_binary_from_file_path(file_path :: String)
     @info "location of the binary file:"
     @info file_path
     io = open_binary(file_path)
-    n = read(io, Int64)
-    nt = read(io, Int64)
-    @info "set Array to dim of nt"
-    @info nt
-
-    type_name = Array{Char}(undef, nt)
-
-    for i in eachindex(type_name)
-        type_name[i] = read(io, Char)
-    end
-
-    # Type
-    T = eval(Symbol(String(type_name)))
-    return unpack_stream_with_type_and_number_of_elements(io, T, n)
+    result = unpack(io, DocBin)
+    return result
+#    n = read(io, Int64)
+#    nt = read(io, Int64)
+#    @info "set Array to dim of nt"
+#    @info nt
+#
+#    type_name = Array{Char}(undef, nt)
+#
+#    for i in eachindex(type_name)
+#        type_name[i] = read(io, Char)
+#    end
+#
+#    # Type
+#    T = eval(Symbol(String(type_name)))
+#    return unpack_stream_with_type_and_number_of_elements(io, T, n)
 end
 
