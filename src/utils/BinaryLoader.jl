@@ -2,7 +2,7 @@ function open_binary(file_path :: String)
     return open(file_path, "r")
 end
 
-function unpack_stream_with_type_and_number_of_elements(io :: IOStream, T :: Type, n :: Float64)
+function unpack_stream_with_type_and_number_of_elements(io :: IOStream, T :: Type, n :: Int64)
     result = Array{T, 1}(undef, n)
 
     for i in eachindex(result)
@@ -16,8 +16,8 @@ function load_binary_from_file_path(file_path :: String)
     @info "location of the binary file:"
     @info file_path
     io = open_binary(file_path)
-    n = read(io, Float64)
-    nt = read(io, Float64)
+    n = read(io, Int64)
+    nt = read(io, Int64)
 
     type_name = Array{Char}(undef, nt)
 
