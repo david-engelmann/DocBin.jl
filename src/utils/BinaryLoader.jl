@@ -2,7 +2,6 @@ include("../models/DocBin.jl")
 using JSON3
 using MsgPack
 using GZip
-using InteractiveUtils
 
 function open_binary(file_path :: String)
     return gzopen(file_path, "r")
@@ -23,7 +22,7 @@ function load_binary_from_file_path(file_path :: String)
     @info file_path
     io = open_binary(file_path)
     @info "io:"
-    @info methodswith(io)
+    @info io
     n = MsgPack.unpack(io)
     @info "set Array to dim of nt"
     @info "n:"
