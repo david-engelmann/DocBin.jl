@@ -29,10 +29,14 @@ function load_binary_from_file_path(file_path :: String)
     @info n
 
     type_name = Array{Char}(undef, n)
+    @info "type one pt 1:"
+    @info type_name
 
     for i in eachindex(type_name)
         type_name[i] = read(io, Char)
     end
+    @info "type one pt 2:"
+    @info type_name
 
     # Type
     T = eval(Symbol(String(type_name)))
