@@ -22,17 +22,13 @@ function load_binary_from_file_path(file_path :: String)
     @info file_path
     io = open_binary(file_path)
     @info "io:"
-    @info io
-    @info MsgPack.unpack(io)
+    @info methodswith(io)
     n = MsgPack.unpack(io)
-    nt = MsgPack.unpack(io)
     @info "set Array to dim of nt"
     @info "n:"
     @info n
-    @info "nt:"
-    @info nt
 
-    type_name = Array{Char}(undef, nt)
+    type_name = Array{Char}(undef, n)
 
     for i in eachindex(type_name)
         type_name[i] = read(io, Char)
