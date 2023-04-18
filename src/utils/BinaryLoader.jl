@@ -39,8 +39,8 @@ function load_binary_from_file_path(file_path :: String)
     @info typeof(type_name)
 
     # Type
-    #T = eval(Symbol(String(type_name)))
-    #return unpack_stream_with_type_and_number_of_elements(io, T, n)
-    return type_name
+    T = eval(Symbol(String(type_name)))
+    return unpack_stream_with_type_and_number_of_elements(io, T, n)
+    #return type_name
 end
 
