@@ -23,7 +23,7 @@ function load_binary_from_file_path(file_path :: String)
     io = open_binary(file_path)
     @info "io:"
     @info io
-    n = MsgPack.unpack(io)
+    n = MsgPack.unpack(seekstart(io))
     @info "set Array to dim of nt"
     @info "n:"
     @info n
@@ -39,7 +39,8 @@ function load_binary_from_file_path(file_path :: String)
     @info type_name
 
     # Type
-    T = eval(Symbol(String(type_name)))
-    return unpack_stream_with_type_and_number_of_elements(io, T, n)
+    #T = eval(Symbol(String(type_name)))
+    #return unpack_stream_with_type_and_number_of_elements(io, T, n)
+    return type_name
 end
 
