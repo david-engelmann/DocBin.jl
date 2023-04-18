@@ -1,4 +1,4 @@
-include("../src/api/TextIngestion.jl")
+include("../src/api/FileIngestion.jl")
 using Test
 
 

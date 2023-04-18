@@ -27,6 +27,10 @@ julia -e 'using Pkg; Pkg.add("JSON3", preserve=PRESERVE_DIRECT);'
 julia -e 'using Pkg; Pkg.add("JSON", preserve=PRESERVE_DIRECT);'
 julia -e 'using Pkg; Pkg.add("Statistics", preserve=PRESERVE_DIRECT);'
 
+julia -e 'using Pkg; Pkg.add("GZip", preserve=PRESERVE_DIRECT);'
+julia -e 'using Pkg; Pkg.add("MsgPack", preserve=PRESERVE_DIRECT);'
+julia -e 'using Pkg; Pkg.add("UUIDs", preserve=PRESERVE_DIRECT);'
+
 julia -e 'using Pkg; Pkg.add("InteractiveUtils", preserve=PRESERVE_DIRECT);'
 
 julia -e 'using Pkg; Pkg.add("Test", preserve=PRESERVE_DIRECT);'

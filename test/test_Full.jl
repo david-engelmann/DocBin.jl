@@ -1,1 +1,2 @@
-include("test_TextIngestion.jl")
+include("test_FileIngestion.jl")
+include("test_BinaryLoader.jl")
