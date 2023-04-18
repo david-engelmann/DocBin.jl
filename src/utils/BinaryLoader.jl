@@ -36,7 +36,7 @@ function load_binary_from_file_path(file_path :: String)
         type_name[i] = read(io, Char)
     end
     @info "type one pt 2:"
-    @info type_name
+    @info typeof(type_name)
 
     # Type
     #T = eval(Symbol(String(type_name)))
