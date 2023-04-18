@@ -4,7 +4,7 @@ using MsgPack
 using GZip
 
 function open_binary(file_path :: String)
-    return open(file_path, "r")
+    return gzopen(file_path, "r")
 end
 
 function unpack_stream_with_type_and_number_of_elements(io :: IOStream, T :: Type, n :: Int64)
@@ -23,7 +23,7 @@ function load_binary_from_file_path(file_path :: String)
     io = open_binary(file_path)
     @info "io:"
     @info io
-    n = MsgPack.unpack(seekstart(io))
+    n = MsgPack.unpack(io)
     @info "set Array to dim of nt"
     @info "n:"
     @info n
